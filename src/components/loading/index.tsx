@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+
 interface IGlobalLoadingProps {
   show: boolean;
   text?: string;
