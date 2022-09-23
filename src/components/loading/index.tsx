@@ -26,7 +26,7 @@ const LoadingComponent = (props: Pick<IGlobalLoadingProps, 'size' | 'text'>) => 
     </div>
   );
 };
-const GlobalLoading = (props: IGlobalLoadingProps) => {
+const Loading = (props: IGlobalLoadingProps) => {
   const { show, mask = false, text, size, fullscreen, center } = props;
   let wrapper = fullscreen ? 'r-loading fullscreen' : 'r-loading';
   wrapper = center ? `${wrapper} center` : wrapper;
@@ -43,4 +43,4 @@ const GlobalLoading = (props: IGlobalLoadingProps) => {
   ) : null;
 };
 
-export default GlobalLoading;
+export default Loading;

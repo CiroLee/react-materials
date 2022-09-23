@@ -16,10 +16,10 @@
   box-shadow: 0 8px 18px -6px rgb(164 134 251 / 60%);
   &__bg-icon {
     position: absolute;
-    font-size: 100px;
     color: rgba(#fff, 40%);
     right: -18px;
-    bottom: -24px;
+    bottom: -50px;
+    font-size: 100px;
     transition: all 0.2s ease-in-out;
   }
   &__content {
@@ -36,11 +36,11 @@
     }
   }
   &:hover {
-    .glass-card__content .text {
+    .r-card__content .text {
       transform: translateX(2px);
     }
-    .bg-icon {
-      color: rgba(#fff, 80%);
+    .r-card__bg-icon {
+      color: rgb(255 255 255 / 80%);
     }
   }
 }

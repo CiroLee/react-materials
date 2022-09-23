@@ -1,6 +1,8 @@
 {
-  "name": "react-ts-tpl",
-  "version": "0.0.0",
+  "name": "react-materials",
+  "description": "repo for learning react",
+  "version": "0.0.1",
+  "author": "CiroLee<ciromail@126.com>",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
@@ -23,6 +25,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
     "recoil": "^0.7.5",
+    "remixicon": "^2.5.0",
     "reset-css": "^5.0.1"
   },
   "devDependencies": {

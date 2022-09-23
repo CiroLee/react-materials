@@ -1,34 +1,36 @@
-import React from 'react';
-import { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import { HashRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import routesConfig from '@/routes';
 import SideMenu from './siteMenu';
 import style from './index.module.scss';
+import { RouteConfigProps } from '@/types/router';
 
-// const Layout = (props: { children: React.ReactNode }) => {
-//   return (
-//     <div className={style.layout}>
-//       <SideMenu />
-//       {props.children}
-//     </div>
-//   );
-// };
-
-const Layout = () => {
-  const routes = routesConfig.map((item) => {
-    return <Route path={item.path} element={item.element} key={item.name} />;
+const Redirect = ({ to }: { to: string }) => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate(to, { replace: true });
   });
+  return null;
+};
+// 递归渲染子路由
+const renderRoutes = (routes: RouteConfigProps[]) => {
+  return routes.map((item) => <Route path={item.path} element={item.element} key={item.name} />);
+};
+const Layout = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className={style.layout}>
         <SideMenu />
-        <main>
+        <main className={style.content}>
           <Suspense fallback={<></>}>
-            <Routes>{routes}</Routes>
+            <Routes>
+              <Route path="/" element={<Redirect to="/components" />}></Route>
+              {renderRoutes(routesConfig)}
+            </Routes>
           </Suspense>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
