@@ -66,7 +66,7 @@ const LoadingComPage = () => {
         </div>
         <div className={style['loading-page__panel']}>
           <p onClick={showLoading2}>全屏loading-无遮罩(click)</p>
-          <Loading show={show2} fullscreen={false} mask />
+          <Loading show={show2} fullscreen mask={false} />
         </div>
       </div>
     </div>
