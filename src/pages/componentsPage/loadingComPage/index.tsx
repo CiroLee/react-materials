@@ -10,8 +10,8 @@ const LoadingComPage = () => {
   const navigate = useNavigate();
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
-  let timer1: number;
-  let timer2: number;
+  let timer1: NodeJS.Timer;
+  let timer2: NodeJS.Timer;
   const showLoading1 = () => {
     setShow1(true);
     timer1 = setTimeout(() => {
