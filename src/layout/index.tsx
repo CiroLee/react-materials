@@ -2,7 +2,7 @@ import { Suspense, useEffect } from 'react';
 import { HashRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import routesConfig from '@/routes';
 import SideMenu from './siteMenu';
-import style from './index.module.scss';
+import style from './style/index.module.scss';
 import { RouteConfigProps } from '@/types/router';
 
 const Redirect = ({ to }: { to: string }) => {

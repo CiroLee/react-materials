@@ -2,13 +2,14 @@ $loading-color: #1389f1;
 $z-index: 999;
 
 .r-loading {
+  display: inline-block;
   &__mask {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(0 0 0 / 12%);
+    background-color: rgb(178 178 178 / 60%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +20,6 @@ $z-index: 999;
     --size: 30px;
 
     flex-direction: column;
-    position: absolute;
     z-index: $z-index;
     display: flex;
     align-items: center;
@@ -51,6 +51,7 @@ $z-index: 999;
     box-sizing: border-box;
   }
   &.fullscreen {
+    display: unset;
     .r-loading__loading-box,
     .r-loading__mask {
       position: fixed;
@@ -61,6 +62,7 @@ $z-index: 999;
     .r-loading__loading-box {
       top: 50%;
       left: 50%;
+      position: absolute;
       transform: translate(-50%, -50%);
     }
   }

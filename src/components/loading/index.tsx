@@ -1,5 +1,6 @@
 import React from 'react';
-import './index.scss';
+import classNames from 'classnames';
+import './style/index.scss';
 interface IGlobalLoadingProps {
   show: boolean;
   text?: string;
@@ -18,20 +19,25 @@ const MaskConponent = (props: IMaskProps) => {
   return <div className="r-loading__mask">{props.children}</div>;
 };
 const LoadingComponent = (props: Pick<IGlobalLoadingProps, 'size' | 'text'>) => {
-  const classname = props.size ? `r-loading__loading-box ${props.size}` : 'r-loading__loading-box';
   return (
-    <div className={classname}>
+    <div className={classNames('r-loading__loading-box', props.size)}>
       <div className="r-loading__loading--circle"></div>
       {props.text && <span className="r-loading__loading-text">{props.text}</span>}
     </div>
   );
 };
+/**
+ * TODO
+ * 自动阻止事件冒泡
+ */
 const Loading = (props: IGlobalLoadingProps) => {
-  const { show, mask = false, text, size, fullscreen, center } = props;
-  let wrapper = fullscreen ? 'r-loading fullscreen' : 'r-loading';
-  wrapper = center ? `${wrapper} center` : wrapper;
+  const { show, mask, text, size, fullscreen, center } = props;
   return show ? (
-    <div className={wrapper}>
+    <div
+      className={classNames('r-loading', {
+        fullscreen: fullscreen,
+        center: center,
+      })}>
       {mask ? (
         <MaskConponent fullscreen={fullscreen}>
           <LoadingComponent text={text} size={size} />

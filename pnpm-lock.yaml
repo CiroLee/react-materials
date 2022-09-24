@@ -29,6 +29,7 @@ specifiers:
   stylelint-config-standard: ^28.0.0
   stylelint-config-standard-scss: ^5.0.0
   stylelint-scss: ^4.3.0
+  tiny-lorem: ^0.0.5
   typescript: ^4.8.3
   vite: ^3.1.3
 
@@ -40,6 +41,7 @@ dependencies:
   recoil: 0.7.5_biqbaboplfbrettd7655fr4n2y
   remixicon: 2.5.0
   reset-css: 5.0.1
+  tiny-lorem: 0.0.5
 
 devDependencies:
   '@commitlint/config-conventional': 17.1.0
@@ -3704,6 +3706,10 @@ packages:
     dependencies:
       readable-stream: 3.6.0
     dev: true
+
+  /tiny-lorem/0.0.5:
+    resolution: {integrity: sha512-mRxPWuErIly+FtjHCPJUofO48Qw7xsiH1daW48uu2MSZMjcGHBMSU+TTW8DiaXQHFBa5dyYmV9qautbfZ0qmDQ==}
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}

@@ -1,0 +1,33 @@
+.loading-page {
+  &__content {
+    margin-top: 16px;
+  }
+  &__panel {
+    margin-top: 12px;
+  }
+  &__block {
+    max-height: 80px;
+    font-size: 14px;
+    padding: 12px 20px;
+    margin: 0 6px 6px 0;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    &--text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* stylelint-disable-next-line value-no-vendor-prefix */
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+    & :global(.r-loading) {
+      margin-right: 6px;
+    }
+  }
+}
+
+.title {
+  font-size: 20px;
+}

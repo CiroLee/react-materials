@@ -26,7 +26,8 @@
     "react-router-dom": "^6.4.0",
     "recoil": "^0.7.5",
     "remixicon": "^2.5.0",
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "tiny-lorem": "^0.0.5"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.1.0",

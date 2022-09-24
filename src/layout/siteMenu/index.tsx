@@ -28,7 +28,7 @@ const SideMenu: FC = () => {
         ))}
       </div>
       <div className={cx('side-menu__footer')} onClick={() => setSollapsible(!collapsible)}>
-        <ReIcon name="arrow-left-s-line"></ReIcon>
+        <ReIcon name="ri-arrow-left-s-line" size={20}></ReIcon>
       </div>
     </div>
   );
