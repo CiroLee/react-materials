@@ -8,8 +8,10 @@ import Loading from '@/components/loading';
 const lorem = new TinyLorem();
 const LoadingComPage = () => {
   const navigate = useNavigate();
+
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [mockTexts, setMockTexts] = useState('');
   let timer1: NodeJS.Timer;
   let timer2: NodeJS.Timer;
   const showLoading1 = () => {
@@ -28,6 +30,12 @@ const LoadingComPage = () => {
   };
 
   useEffect(() => {
+    if (!mockTexts) {
+      setMockTexts(lorem.texts.word({ range: 200 }));
+    }
+  }, []);
+
+  useEffect(() => {
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
@@ -41,7 +49,7 @@ const LoadingComPage = () => {
         <div className={style['loading-page__panel']}>
           <p>块级loading-遮罩</p>
           <div className={style['loading-page__block']}>
-            <div className={style['loading-page__block--text']}>{lorem.texts.word({ range: 200 })}</div>
+            <div className={style['loading-page__block--text']}>{mockTexts}</div>
             <Loading show={true} center={true} mask={true} />
           </div>
         </div>
