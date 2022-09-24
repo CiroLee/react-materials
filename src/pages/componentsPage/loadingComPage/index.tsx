@@ -56,7 +56,7 @@ const LoadingComPage = () => {
         <div className={style['loading-page__panel']}>
           <p>块级loading-无遮罩</p>
           <div className={style['loading-page__block']}>
-            <div className={style['loading-page__block--text']}>{lorem.texts.word({ range: 200 })}</div>
+            <div className={style['loading-page__block--text']}>{mockTexts}</div>
             <Loading show={true} center={true} mask={false} />
           </div>
         </div>
