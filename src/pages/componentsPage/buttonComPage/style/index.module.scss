@@ -1,0 +1,19 @@
+.button-page {
+  &__title {
+    font-size: 20px;
+  }
+  &__content {
+    margin-top: 16px;
+    & :global(.r-button) {
+      margin: 6px 6px 0 0;
+    }
+  }
+  &__block {
+    margin-top: 16px;
+  }
+  &__button-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}

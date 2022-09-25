@@ -4,16 +4,16 @@ import './style/index.scss';
 interface IReIcon {
   name?: string;
   color?: string;
-  size?: number;
+  size?: number | string;
   className?: string;
-  onClick?: (props: unknown) => void;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 const transToCssVariables = (props: IReIcon) => {
-  const { color = 'inherit', size = 16 } = props;
+  const { color = 'inherit', size = 'inherit' } = props;
 
   const temp = {
     '--color': color,
-    '--size': `${size}px`,
+    '--size': typeof size === 'number' ? `${size}px` : size,
   };
   let properties: Omit<IReIcon, 'name'> = {};
   for (const key in temp) {
@@ -25,13 +25,17 @@ const transToCssVariables = (props: IReIcon) => {
   }
   return properties;
 };
+
 const ReIcon: FC<IReIcon> = (props: IReIcon) => {
   const cssVariables = transToCssVariables(props);
+  const handleOnClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    props.onClick && (props.onClick as React.MouseEventHandler<HTMLElement>)?.(event);
+  };
   return (
     <i
       className={classNames('re-icon', props.name, props.className)}
       style={cssVariables as React.CSSProperties}
-      onClick={props.onClick}></i>
+      onClick={handleOnClick}></i>
   );
 };
 
