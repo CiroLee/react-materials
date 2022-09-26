@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReIcon from '@/components/reIcon';
+import RButton from '@/components/button';
 import { useNavigate } from 'react-router-dom';
 import style from './style/index.module.scss';
 import TinyLorem from 'tiny-lorem';
@@ -69,12 +70,12 @@ const LoadingComPage = () => {
           </div>
         </div>
         <div className={style['loading-page__panel']}>
-          <p onClick={showLoading1}>全屏loading-遮罩(click)</p>
-          <Loading show={show1} fullscreen mask />
+          <RButton onClick={showLoading1}>全屏loading-遮罩</RButton>
+          <Loading show={show1} fullscreen mask text="loading..." />
         </div>
         <div className={style['loading-page__panel']}>
-          <p onClick={showLoading2}>全屏loading-无遮罩(click)</p>
-          <Loading show={show2} fullscreen mask={false} />
+          <RButton onClick={showLoading2}>全屏loading-无遮罩</RButton>
+          <Loading show={show2} fullscreen mask={false} text="loading..." />
         </div>
       </div>
     </div>
