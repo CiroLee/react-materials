@@ -1,0 +1,65 @@
+.todolist {
+  position: relative;
+  &__title--center {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__input--box,
+  &__input {
+    width: 100%;
+    display: flex;
+  }
+  &__input--box {
+    position: relative;
+    margin-right: 8px;
+    &::after {
+      content: attr(data-count);
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      margin-top: 2px;
+      transform: translateY(-50%);
+      color: #ddd;
+      font-size: 14px;
+    }
+  }
+  &__input input {
+    outline: 0;
+    margin: 0;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 8px 16px;
+    padding-right: 40px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    position: relative;
+    &:focus,
+    &:focus-within {
+      border-color: #027bff;
+      box-shadow: 0 0 2px 2px rgb(2 123 255 / 30%);
+    }
+  }
+  &__ul {
+    margin-top: 16px;
+    li {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #eee;
+      margin-bottom: 8px;
+      justify-content: space-between;
+      :global(.r-button:last-child) {
+        margin-left: 4px;
+      }
+      &.finished {
+        & span {
+          color: gray;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

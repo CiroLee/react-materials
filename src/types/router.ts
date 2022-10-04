@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteProps } from 'react-router-dom';
 
-export interface RouteConfigProps extends Omit<RouteProps, 'children'> {
+export interface RouteConfigProps extends RouteProps {
   name: string;
   element?: React.ReactNode;
   parent?: string;
@@ -9,5 +9,6 @@ export interface RouteConfigProps extends Omit<RouteProps, 'children'> {
     cname?: string;
     icon?: string;
     visible?: boolean;
+    [key: string]: React.ReactNode;
   };
 }

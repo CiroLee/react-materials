@@ -1,8 +1,10 @@
 import { lazy } from 'react';
 import { RouteConfigProps } from '@/types/router';
 const ComponentsPage = lazy(() => import('@/pages/componentsPage'));
+const BusinessPage = lazy(() => import('@/pages/businessPage'));
 const LoadingComPage = lazy(() => import('@/pages/componentsPage/loadingComPage'));
 const ButtonComPage = lazy(() => import('@/pages/componentsPage/buttonComPage'));
+const TodoList = lazy(() => import('@/pages/businessPage/todoList'));
 const routesConfig: RouteConfigProps[] = [
   {
     name: 'components',
@@ -32,6 +34,27 @@ const routesConfig: RouteConfigProps[] = [
     meta: {
       cname: 'button',
       icon: 'ri-t-box-line',
+    },
+  },
+  {
+    name: 'business',
+    path: 'business',
+    element: <BusinessPage />,
+    meta: {
+      cname: '页面',
+      visible: true,
+      icon: 'ri-lightbulb-flash-line',
+    },
+  },
+  {
+    name: 'todolist',
+    path: '/business/todolist',
+    element: <TodoList />,
+    parent: 'business',
+    meta: {
+      cname: 'TodoList',
+      visible: false,
+      desc: 'react入门',
     },
   },
 ];
