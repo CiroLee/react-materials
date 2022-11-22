@@ -5,6 +5,8 @@ const BusinessPage = lazy(() => import('@/pages/businessPage'));
 const LoadingComPage = lazy(() => import('@/pages/componentsPage/loadingComPage'));
 const ButtonComPage = lazy(() => import('@/pages/componentsPage/buttonComPage'));
 const TodoList = lazy(() => import('@/pages/businessPage/todoList'));
+
+// ps: 加了一些自定义meta薪资
 const routesConfig: RouteConfigProps[] = [
   {
     name: 'components',

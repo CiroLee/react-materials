@@ -1,7 +1,7 @@
 import React from 'react';
-import { RouteProps } from 'react-router-dom';
+import type { PathRouteProps } from 'react-router-dom';
 
-export interface RouteConfigProps extends RouteProps {
+export interface RouteConfigProps extends PathRouteProps {
   name: string;
   element?: React.ReactNode;
   parent?: string;

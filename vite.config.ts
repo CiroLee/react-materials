@@ -28,13 +28,4 @@ export default defineConfig({
       ],
     },
   },
-  build: {
-    terserOptions: {
-      compress: {
-        //生产环境时移除console,debugger
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
-  },
 });
