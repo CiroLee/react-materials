@@ -6,6 +6,8 @@ interface IReIcon {
   color?: string;
   size?: number | string;
   className?: string;
+  style?: React.CSSProperties;
+  gradient?: string;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 const transToCssVariables = (props: IReIcon) => {
@@ -14,6 +16,7 @@ const transToCssVariables = (props: IReIcon) => {
   const temp = {
     '--color': color,
     '--size': typeof size === 'number' ? `${size}px` : size,
+    '--gradient': props.gradient ? props.gradient : '',
   };
   let properties: Omit<IReIcon, 'name'> = {};
   for (const key in temp) {
@@ -33,7 +36,9 @@ const ReIcon: FC<IReIcon> = (props: IReIcon) => {
   };
   return (
     <i
-      className={classNames('re-icon', props.name, props.className)}
+      className={classNames('re-icon', props.name, props.className, {
+        'use-gradient': !!props.gradient,
+      })}
       style={cssVariables as React.CSSProperties}
       onClick={handleOnClick}></i>
   );

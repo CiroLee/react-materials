@@ -5,8 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import style from './style/index.module.scss';
 import TinyLorem from 'tiny-lorem';
 import Loading from '@/components/loading';
+import LoadingFn from '@/components/loadingFn';
 
 const lorem = new TinyLorem();
+const loadingFn = new LoadingFn();
 const LoadingComPage = () => {
   const navigate = useNavigate();
 
@@ -28,6 +30,13 @@ const LoadingComPage = () => {
       setShow2(false);
       clearInterval(timer2);
     }, 3000);
+  };
+
+  const loadingFnHandler = () => {
+    loadingFn.start();
+    setTimeout(() => {
+      loadingFn.stop();
+    }, 2000);
   };
 
   useEffect(() => {
@@ -76,6 +85,9 @@ const LoadingComPage = () => {
         <div className={style['loading-page__panel']}>
           <RButton onClick={showLoading2}>全屏loading-无遮罩</RButton>
           <Loading show={show2} fullscreen mask={false} text="loading..." />
+        </div>
+        <div className={style['loading-page__panel']}>
+          <RButton onClick={loadingFnHandler}>函数式loading</RButton>
         </div>
       </div>
     </div>

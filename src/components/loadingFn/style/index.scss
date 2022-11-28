@@ -1,0 +1,39 @@
+.loading-fn {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--mask-bg);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.1s;
+  &__box {
+    width: 120px;
+    height: 120px;
+    background-color: rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    span {
+      color: #fff;
+    }
+    .re-icon {
+      animation: loading 0.4s linear infinite;
+    }
+  }
+  &.out {
+    opacity: 0;
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}

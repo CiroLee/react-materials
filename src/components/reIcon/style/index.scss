@@ -3,4 +3,9 @@
   font-size: var(--size);
   position: relative;
   cursor: pointer;
+  &.use-gradient {
+    color: transparent !important;
+    background-image: var(--gradient);
+    background-clip: text;
+  }
 }
