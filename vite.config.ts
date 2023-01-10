@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
 import cssnano from 'cssnano';
 
 // https://vitejs.dev/config/
@@ -21,6 +22,7 @@ export default defineConfig({
       // 自动追加前缀
       plugins: [
         autoprefixer,
+        tailwindcss,
         // cssnano压缩css
         cssnano({
           preset: 'default',
