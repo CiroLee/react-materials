@@ -11,10 +11,10 @@ interface ResizableBoxProps {
 const ResizableBox: FC<ResizableBoxProps> = (props) => {
   const parentStyle = props.resize.includes('horizontal')
     ? {
-        height: props.height || '120px',
+        height: props.height || '16px',
       }
     : ({
-        width: props.width || '120px',
+        width: props.width || '16px',
       } as React.CSSProperties);
   const resizeStyle = props.resize.includes('horizontal')
     ? {
