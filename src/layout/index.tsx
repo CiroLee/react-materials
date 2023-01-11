@@ -12,7 +12,7 @@ const Redirect = ({ to }: { to: string }) => {
   });
   return null;
 };
-// 递归渲染子路由
+// 渲染子路由
 const renderRoutes = (routes: RouteConfigProps[]) => {
   return routes.map((item) => <Route path={item.path} element={item.element} key={item.name} />);
 };
