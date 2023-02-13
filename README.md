@@ -7,6 +7,7 @@
 | [Loading](./src/components/loading/index.tsx)            | Loading 组件      |
 | [Button](./src/components/button/index.tsx)              | Button 组件       |
 | [ResizableBox](./src/components/resizableBox/index.tsx)  | ResizableBox 组件 |
+| [Popup](./src/components/Popup/index.tsx)                | Popup 组件 组件   |
 | [TodoList](./src//pages/businessPage/todoList/index.tsx) | todoList          |
 
 ## 开发

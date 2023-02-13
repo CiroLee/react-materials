@@ -1,5 +1,4 @@
 .r-button {
-  margin: 0;
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -89,5 +88,7 @@
 }
 
 @keyframes loading {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

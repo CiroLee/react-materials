@@ -11,6 +11,7 @@ interface IRButton {
   suffixIcon?: ReactNode;
   children?: ReactNode;
   loading?: boolean;
+  className?: string;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
@@ -45,9 +46,16 @@ const RButton = (props: IRButton) => {
 
   return (
     <button
-      className={classNames('r-button', `r-button--${type}`, `r-button--${size}`, `r-button--${shape}`, {
-        loading: loading,
-      })}
+      className={classNames(
+        'r-button',
+        `r-button--${type}`,
+        `r-button--${size}`,
+        `r-button--${shape}`,
+        props.className,
+        {
+          loading: loading,
+        },
+      )}
       disabled={props.disabled}
       onClick={handleButtonOnClick}>
       {slot}
