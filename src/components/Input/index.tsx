@@ -85,7 +85,7 @@ const Input: FC<InputProps> = (props) => {
       />
       <div className={classNames('r-input__trail', { 'r-input__count': showCount })} data-count={countStr}>
         <Whether condition={!!clearable && !!String(inputVal).length}>
-          <ReIcon name="ri-close-circle-fill" color="#a8a8a8" className="r-input__btn" onClick={clearInput} />
+          <ReIcon name="ri-close-circle-fill" className="r-input__btn" onClick={clearInput} />
         </Whether>
         <Whether condition={type === 'password'}>
           <ReIcon

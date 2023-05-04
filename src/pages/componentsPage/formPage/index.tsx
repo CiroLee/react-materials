@@ -29,6 +29,10 @@ const FormPage: FC = () => {
             <p className="mb-2 text-md">显示count</p>
             <Input clearable maxLength={20} showCount placeholder="input something" />
           </div>
+          <div className="mb-4">
+            <p className="mb-2 text-md">password</p>
+            <Input type="password" placeholder="input something" />
+          </div>
         </div>
       </div>
       <div className="mb-6 rounded-sm p-4 border border-solid border-gray-200">

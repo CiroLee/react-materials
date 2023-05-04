@@ -22,7 +22,6 @@
     padding: 0 8px;
     background-color: transparent;
     &[type='password'] {
-      font-size: 10px;
       &::-ms-clear {
         display: none;
       }
@@ -40,7 +39,7 @@
     display: flex;
     align-items: center;
     padding-right: 8px;
-    color: var(--assist-color);
+    color: #a8a8a8;
   }
   &__btn {
     margin-right: 4px;
