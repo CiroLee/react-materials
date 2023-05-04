@@ -7,6 +7,7 @@ const ButtonComPage = lazy(() => import('@/pages/componentsPage/buttonComPage'))
 const TodoList = lazy(() => import('@/pages/businessPage/todoList'));
 const ResizeBoxPage = lazy(() => import('@/pages/componentsPage/resizeBoxPage'));
 const PopupPage = lazy(() => import('@/pages/componentsPage/popupPage'));
+const FormPage = lazy(() => import('@/pages/componentsPage/formPage'));
 // ps: 加了一些自定义meta薪资
 const routesConfig: RouteConfigProps[] = [
   {
@@ -57,6 +58,16 @@ const routesConfig: RouteConfigProps[] = [
     meta: {
       icon: 'ri-window-line',
       cname: 'popup',
+    },
+  },
+  {
+    name: 'form',
+    parent: 'components',
+    path: '/components/form',
+    element: <FormPage />,
+    meta: {
+      icon: 'ri-computer-line',
+      cname: 'form',
     },
   },
   {

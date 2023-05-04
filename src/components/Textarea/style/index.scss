@@ -1,0 +1,34 @@
+.cy-textarea {
+  position: relative;
+  align-items: center;
+  background-color: #fff;
+  font-size: 14px;
+  textarea {
+    width: 100%;
+    border-radius: 2px;
+    outline: 0;
+    padding: 8px;
+    padding-right: 18px;
+    transition: border-color 0.1s linear;
+    border: 1px solid #ebebeb;
+    background-color: transparent;
+    &:focus,
+    &:focus-within {
+      border-color: #9e41f1;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #f1f1f1;
+    }
+  }
+  &__clear {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+  }
+  &__count {
+    text-align: right;
+    color: var(--assist-color);
+    color: #a8a8a8;
+  }
+}
