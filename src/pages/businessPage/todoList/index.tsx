@@ -2,6 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReIcon from '@/components/reIcon';
 import RButton from '@/components/button';
+import Input from '@/components/Input';
 import classNames from 'classnames/bind';
 import style from './style/index.module.scss';
 const cx = classNames.bind(style);
@@ -15,8 +16,8 @@ const TodoList = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState('');
   const [list, setList] = useState<Todo[]>([]);
-  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
+  const handleOnChange = (val: string) => {
+    setInput(val);
   };
   const getNextId = () => {
     const ids = list.map((item) => item.id);
@@ -52,8 +53,8 @@ const TodoList = () => {
       <div className={cx('todolist')}>
         <h2 className={cx('todolist__title--center')}>TodoList</h2>
         <div className={cx('todolist__input')}>
-          <div className={cx('todolist__input--box')} data-count={`${input.length}/10`}>
-            <input type="text" value={input} onChange={handleOnChange} maxLength={10}></input>
+          <div className={cx('todolist__input--box')}>
+            <Input value={input} onChange={handleOnChange} maxLength={10} showCount className="flex-1" />
           </div>
           <RButton disabled={!input.length} onClick={handleAdd}>
             Add

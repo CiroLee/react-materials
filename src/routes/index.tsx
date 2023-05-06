@@ -8,6 +8,7 @@ const TodoList = lazy(() => import('@/pages/businessPage/todoList'));
 const ResizeBoxPage = lazy(() => import('@/pages/componentsPage/resizeBoxPage'));
 const PopupPage = lazy(() => import('@/pages/componentsPage/popupPage'));
 const FormPage = lazy(() => import('@/pages/componentsPage/formPage'));
+const RadioPage = lazy(() => import('@/pages/componentsPage/radioPage'));
 // ps: 加了一些自定义meta薪资
 const routesConfig: RouteConfigProps[] = [
   {
@@ -68,6 +69,16 @@ const routesConfig: RouteConfigProps[] = [
     meta: {
       icon: 'ri-computer-line',
       cname: 'form',
+    },
+  },
+  {
+    name: 'radio',
+    parent: 'components',
+    path: '/components/radio',
+    element: <RadioPage />,
+    meta: {
+      icon: 'ri-checkbox-circle-line',
+      cname: 'radio',
     },
   },
   {

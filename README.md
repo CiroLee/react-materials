@@ -7,7 +7,11 @@
 | [Loading](./src/components/loading/index.tsx)            | Loading 组件      |
 | [Button](./src/components/button/index.tsx)              | Button 组件       |
 | [ResizableBox](./src/components/resizableBox/index.tsx)  | ResizableBox 组件 |
-| [Popup](./src/components/Popup/index.tsx)                | Popup 组件 组件   |
+| [Popup](./src/components/Popup/index.tsx)                | Popup 组件        |
+| [Radio](./src/components/Radio/index.tsx)                | Radio 组件        |
+| [Input](./src/components/Input/index.tsx)                | Input 组件        |
+| [Textarea](./src/components/Textarea/index.tsx)          | Textarea 组件     |
+| [ReIcon](./src/components/ReIcon/index.tsx)              | Icon 组件         |
 | [TodoList](./src//pages/businessPage/todoList/index.tsx) | todoList          |
 
 ## 开发

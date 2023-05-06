@@ -4,7 +4,7 @@
   cursor: pointer;
   color: #fff;
 
-  --height: 40px;
+  --height: 34px;
   --border-radius: 4px;
   --pressed-bgcolor: #005fdb;
   --hover-bgcolor: #3fa5ff;
@@ -37,11 +37,11 @@
   }
   &--small {
     --height: 28px;
-    --border-radius: 6px;
+    --border-radius: 3px;
   }
   &--large {
-    --height: 52px;
-    --border-radius: 10px;
+    --height: 42px;
+    --border-radius: 6px;
   }
 
   background-color: #007bff;
@@ -49,7 +49,7 @@
   align-items: center;
   height: var(--height);
   border-radius: var(--border-radius);
-  padding: 0 calc(var(--height) * 0.6);
+  padding: 0 calc(var(--height) * 0.54);
   font-size: calc(var(--height) * 0.38);
   transition: all 0.2s ease;
   &--circle,
