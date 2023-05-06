@@ -2,14 +2,17 @@ import { FC, useEffect, useState } from 'react';
 import ReIcon from '../reIcon';
 import classNames from 'classnames';
 import './style/index.scss';
+import { log } from 'console';
 
 interface Option {
   label: string;
   value: string | number;
+  disabled?: boolean;
 }
 interface RadioProps {
   type?: 'checked' | 'circle';
   checked?: boolean;
+  size?: 'small' | 'medium' | 'large';
   className?: string;
   children?: React.ReactNode;
   disabled?: boolean;
@@ -18,6 +21,7 @@ interface RadioProps {
 
 interface RadioGroupProps {
   type?: 'checked' | 'circle';
+  size?: 'small' | 'medium' | 'large';
   direction?: 'horizontal' | 'vertical';
   defaultKey?: string | number;
   options: Option[];
@@ -25,8 +29,20 @@ interface RadioGroupProps {
   onChange?: (item: Option, checked: boolean) => void;
 }
 const Radio: FC<RadioProps> = (props) => {
-  const { type = 'checked', checked, disabled, className, children } = props;
+  const { type = 'checked', checked, disabled, size = 'medium', className, children } = props;
   const [checkedVal, setCheckedVal] = useState(false);
+  const getSize = (size: 'small' | 'medium' | 'large') => {
+    switch (size) {
+      case 'small':
+        return '16px';
+      case 'medium':
+        return '20px';
+      case 'large':
+        return '24px';
+      default:
+        return '18px';
+    }
+  };
   const toggleChecked = () => {
     if (disabled) return;
     setCheckedVal(!checkedVal);
@@ -39,9 +55,9 @@ const Radio: FC<RadioProps> = (props) => {
   return (
     <div className={classNames('r-radio', className, { checked: checkedVal, disabled })} onClick={toggleChecked}>
       {type === 'circle' ? (
-        <ReIcon name={checkedVal ? 'ri-radio-button-fill' : 'ri-checkbox-blank-circle-line'} size="18px" />
+        <ReIcon name={checkedVal ? 'ri-radio-button-fill' : 'ri-checkbox-blank-circle-line'} size={getSize(size)} />
       ) : (
-        <ReIcon name={checkedVal ? 'ri-checkbox-circle-fill' : 'ri-checkbox-blank-circle-line'} size="16px" />
+        <ReIcon name={checkedVal ? 'ri-checkbox-circle-fill' : 'ri-checkbox-blank-circle-line'} size={getSize(size)} />
       )}
       <div className={classNames('r-radio__content')}>{children}</div>
     </div>
@@ -49,7 +65,7 @@ const Radio: FC<RadioProps> = (props) => {
 };
 
 export const RadioGroup: FC<RadioGroupProps> = (props) => {
-  const { defaultKey, type, options, direction = 'horizontal', className, onChange } = props;
+  const { defaultKey, type, options, direction = 'horizontal', size = 'medium', className, onChange } = props;
   const [activeVal, setActiveVal] = useState<number | string>();
   const radioChangeHandler = (item: Option, checked: boolean) => {
     setActiveVal(item.value);
@@ -66,6 +82,8 @@ export const RadioGroup: FC<RadioGroupProps> = (props) => {
         <Radio
           key={item.value}
           type={type}
+          size={size}
+          disabled={item.disabled}
           checked={item.value === activeVal}
           onChange={(checked) => radioChangeHandler(item, checked)}>
           {item.label}

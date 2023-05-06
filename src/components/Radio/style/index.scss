@@ -9,9 +9,6 @@
 
     // maybe you didn't want to use this margin
     margin-top: 3.3px;
-    &:hover {
-      color: #9e41f1;
-    }
   }
   &.checked .re-icon {
     color: #9e41f1;
@@ -21,6 +18,11 @@
     cursor: not-allowed;
     .re-icon {
       color: currentcolor;
+    }
+  }
+  &:hover:not(.disabled) {
+    .re-icon {
+      color: #9e41f1;
     }
   }
   &__content {

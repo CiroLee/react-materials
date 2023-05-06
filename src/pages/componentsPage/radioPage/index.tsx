@@ -62,7 +62,19 @@ const RadioPage: FC = () => {
           </Radio>
         </div>
         <div className="mb-4">
-          <p className="mb-2">RadioGroup direction=horizontal</p>
+          <p className="mb-2">不同尺寸</p>
+          <Radio type="circle" size="small">
+            small
+          </Radio>
+          <Radio type="circle" size="medium" className="ml-2">
+            medium(default)
+          </Radio>
+          <Radio type="circle" size="large" className="ml-2">
+            small
+          </Radio>
+        </div>
+        <div className="mb-4">
+          <p className="mb-2">RadioGroup - direction=horizontal</p>
           <RadioGroup
             defaultKey="react"
             options={options}
@@ -72,7 +84,7 @@ const RadioPage: FC = () => {
           />
         </div>
         <div className="mb-4">
-          <p className="mb-2">RadioGroup direction=vertical</p>
+          <p className="mb-2">RadioGroup - direction=vertical</p>
           <RadioGroup
             direction="vertical"
             defaultKey="vue"
