@@ -2,17 +2,17 @@ import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReIcon from '@/components/reIcon';
 import routesConfig from '@/routes';
-import classNanmes from 'classnames/bind';
+import classNames from 'classnames/bind';
 import style from './style/index.module.scss';
 
-const cx = classNanmes.bind(style);
+const cx = classNames.bind(style);
 const activeLink = {
   color: 'white',
   backgroundColor: '#007bff',
 };
 const SideMenu: FC = () => {
   const filterRoutes = routesConfig.filter((item) => item.meta?.visible);
-  const [collapsible, setSollapsible] = useState(false);
+  const [collapsible, setCollapsible] = useState(false);
   return (
     <div className={cx('side-menu', { collapsible: collapsible })}>
       <div className={cx('side-menu__items')}>
@@ -27,7 +27,7 @@ const SideMenu: FC = () => {
           </NavLink>
         ))}
       </div>
-      <div className={cx('side-menu__footer')} onClick={() => setSollapsible(!collapsible)}>
+      <div className={cx('side-menu__footer')} onClick={() => setCollapsible(!collapsible)}>
         <ReIcon name="ri-arrow-left-s-line" size={20}></ReIcon>
       </div>
     </div>

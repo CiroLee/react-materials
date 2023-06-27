@@ -9,7 +9,8 @@ const ResizeBoxPage = lazy(() => import('@/pages/componentsPage/resizeBoxPage'))
 const PopupPage = lazy(() => import('@/pages/componentsPage/popupPage'));
 const FormPage = lazy(() => import('@/pages/componentsPage/formPage'));
 const RadioPage = lazy(() => import('@/pages/componentsPage/radioPage'));
-// ps: 加了一些自定义meta薪资
+
+// ps: 加了一些自定义meta信息
 const routesConfig: RouteConfigProps[] = [
   {
     name: 'components',
