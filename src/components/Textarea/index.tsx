@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import Whether from '../Whether';
+import Show from '../Show';
 import ReIcon from '../reIcon';
 import classNames from 'classnames';
 import './style/index.scss';
@@ -54,12 +54,12 @@ const Textarea: FC<TextAreaProps> = (props) => {
   return (
     <div className={classNames('cy-textarea', className, { disabled })}>
       <textarea value={inputVal} rows={rows} disabled={disabled} placeholder={placeholder} onChange={onChangeHandler} />
-      <Whether condition={!!clearable && !!inputVal.length}>
+      <Show if={!!clearable && !!inputVal.length}>
         <ReIcon name="ri-close-circle-fill" color="#a8a8a8" className="cy-textarea__clear" onClick={clearInput} />
-      </Whether>
-      <Whether condition={!!showCount}>
+      </Show>
+      <Show if={!!showCount}>
         <div className={classNames({ 'cy-textarea__count': showCount })}>{countStr}</div>
-      </Whether>
+      </Show>
     </div>
   );
 };

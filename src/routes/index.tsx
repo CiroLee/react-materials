@@ -9,6 +9,7 @@ const ResizeBoxPage = lazy(() => import('@/pages/componentsPage/resizeBoxPage'))
 const PopupPage = lazy(() => import('@/pages/componentsPage/popupPage'));
 const FormPage = lazy(() => import('@/pages/componentsPage/formPage'));
 const RadioPage = lazy(() => import('@/pages/componentsPage/radioPage'));
+const LogicComPage = lazy(() => import('@/pages/componentsPage/logicPage'));
 
 // ps: 加了一些自定义meta信息
 const routesConfig: RouteConfigProps[] = [
@@ -83,6 +84,16 @@ const routesConfig: RouteConfigProps[] = [
     },
   },
   {
+    name: 'logic',
+    path: '/components/logic',
+    parent: 'components',
+    element: <LogicComPage />,
+    meta: {
+      cname: 'logics',
+      icon: 'ri-global-line',
+    },
+  },
+  {
     name: 'business',
     path: 'business',
     element: <BusinessPage />,
@@ -92,6 +103,7 @@ const routesConfig: RouteConfigProps[] = [
       icon: 'ri-lightbulb-flash-line',
     },
   },
+
   {
     name: 'todolist',
     path: '/business/todolist',

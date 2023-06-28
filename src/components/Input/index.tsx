@@ -1,15 +1,15 @@
 import { FC, useState, useEffect, useRef } from 'react';
-import Whether from '../Whether';
+import Show from '../Show';
 import ReIcon from '../reIcon';
 import classNames from 'classnames';
 import './style/index.scss';
-import { log } from 'console';
 export interface InputProps {
   type?: 'text' | 'password';
   value?: string | number;
   placeholder?: string;
   className?: string;
   maxLength?: number;
+  autoComplete?: boolean;
   clearable?: boolean;
   showCount?: boolean;
   disabled?: boolean;
@@ -27,6 +27,7 @@ const Input: FC<InputProps> = (props) => {
     maxLength,
     clearable,
     showCount,
+    autoComplete = true,
     onChange,
     onBlur,
   } = props;
@@ -79,22 +80,23 @@ const Input: FC<InputProps> = (props) => {
         value={inputVal}
         placeholder={placeholder}
         disabled={disabled}
+        autoComplete={autoComplete ? 'on' : 'new-password'}
         onFocus={() => setFocus(true)}
         onBlur={onBlurHandler}
         onChange={onChangeHandler}
       />
       <div className={classNames('r-input__trail', { 'r-input__count': showCount })} data-count={countStr}>
-        <Whether condition={!!clearable && !!String(inputVal).length}>
+        <Show if={!!clearable && !!String(inputVal).length}>
           <ReIcon name="ri-close-circle-fill" className="r-input__btn" onClick={clearInput} />
-        </Whether>
-        <Whether condition={type === 'password'}>
+        </Show>
+        <Show if={type === 'password'}>
           <ReIcon
             name={showPassword ? 'ri-eye-line' : 'ri-eye-close-line'}
             className="r-input__btn"
             style={{ marginRight: 0 }}
             onClick={() => setShowPassword(!showPassword)}
           />
-        </Whether>
+        </Show>
       </div>
     </div>
   );
