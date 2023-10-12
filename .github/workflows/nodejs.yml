@@ -9,9 +9,9 @@ jobs:
    steps:
     - name: Checkout repo
       uses: actions/checkout@v2 
-    - uses: pnpm/action-setup@v2.1.0
+    - uses: pnpm/action-setup@v2
       with:
-        version: 7
+        version: 8
     - name: install
       run: pnpm install
     - name: build
