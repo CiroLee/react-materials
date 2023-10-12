@@ -1,0 +1,45 @@
+$indicator-color: #c382fb;
+$indicator-active-color: #9e41f1;
+$ratio: 1.2;
+$ani-duration: 0.5s;
+$indicator-size: 8px;
+$indicator-gap: 4px;
+
+@mixin active-size {
+  width: calc($indicator-size * $ratio);
+  height: calc($indicator-size * $ratio);
+}
+
+.indicator-active-size[class] {
+  @include active-size;
+}
+
+.r-indicator {
+  overflow: hidden;
+  &__list {
+    display: flex;
+    align-items: center;
+    transition: transform $ani-duration ease;
+  }
+  &__item {
+    width: $indicator-size;
+    height: $indicator-size;
+    background-color: $indicator-color;
+    flex-shrink: 0;
+    transition-property: width, height;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+    border-radius: calc(calc($indicator-size * $ratio) / 2);
+    &:not(:last-child) {
+      margin-right: $indicator-gap;
+    }
+    &.indicator-active {
+      background-color: $indicator-active-color;
+
+      @include active-size;
+      & + div {
+        @include active-size;
+      }
+    }
+  }
+}

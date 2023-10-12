@@ -10,6 +10,7 @@ const PopupPage = lazy(() => import('@/pages/componentsPage/popupPage'));
 const FormPage = lazy(() => import('@/pages/componentsPage/formPage'));
 const RadioPage = lazy(() => import('@/pages/componentsPage/radioPage'));
 const LogicComPage = lazy(() => import('@/pages/componentsPage/logicPage'));
+const IndicatorPage = lazy(() => import('@/pages/componentsPage/indicatorPage'));
 
 // ps: 加了一些自定义meta信息
 const routesConfig: RouteConfigProps[] = [
@@ -91,6 +92,16 @@ const routesConfig: RouteConfigProps[] = [
     meta: {
       cname: 'logics',
       icon: 'ri-global-line',
+    },
+  },
+  {
+    name: 'indicator',
+    path: '/components/indicator',
+    parent: 'components',
+    element: <IndicatorPage />,
+    meta: {
+      cname: 'indicator',
+      icon: 'ri-circle-fill',
     },
   },
   {
