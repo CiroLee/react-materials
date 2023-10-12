@@ -15,18 +15,18 @@ const LoadingComPage = () => {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [mockTexts, setMockTexts] = useState('');
-  let timer1: NodeJS.Timer;
-  let timer2: NodeJS.Timer;
+  let timer1: number;
+  let timer2: number;
   const showLoading1 = () => {
     setShow1(true);
-    timer1 = setTimeout(() => {
+    timer1 = window.setTimeout(() => {
       setShow1(false);
       clearInterval(timer1);
     }, 3000);
   };
   const showLoading2 = () => {
     setShow2(true);
-    timer2 = setTimeout(() => {
+    timer2 = window.setTimeout(() => {
       setShow2(false);
       clearInterval(timer2);
     }, 3000);
