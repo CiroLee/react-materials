@@ -2,8 +2,6 @@ import { FC, useEffect, useState } from 'react';
 import ReIcon from '../reIcon';
 import classNames from 'classnames';
 import './style/index.scss';
-import { log } from 'console';
-
 interface Option {
   label: string;
   value: string | number;

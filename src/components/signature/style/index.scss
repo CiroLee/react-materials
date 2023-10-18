@@ -1,0 +1,8 @@
+.signature {
+  &__operator {
+    margin-top: 12px;
+    button:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}

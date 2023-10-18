@@ -11,6 +11,7 @@ const FormPage = lazy(() => import('@/pages/componentsPage/formPage'));
 const RadioPage = lazy(() => import('@/pages/componentsPage/radioPage'));
 const LogicComPage = lazy(() => import('@/pages/componentsPage/logicPage'));
 const IndicatorPage = lazy(() => import('@/pages/componentsPage/indicatorPage'));
+import SignaturePage from '@/pages/componentsPage/signaturePage';
 
 // ps: 加了一些自定义meta信息
 const routesConfig: RouteConfigProps[] = [
@@ -102,6 +103,16 @@ const routesConfig: RouteConfigProps[] = [
     meta: {
       cname: 'indicator',
       icon: 'ri-circle-fill',
+    },
+  },
+  {
+    name: 'signature',
+    path: '/components/signature',
+    parent: 'components',
+    element: <SignaturePage />,
+    meta: {
+      cname: 'Signature',
+      icon: 'ri-sketching',
     },
   },
   {
